@@ -66,6 +66,11 @@ public class TeacherHome extends javax.swing.JFrame {
         jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jMenu2.setMargin(new java.awt.Insets(2, 5, 2, 10));
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all questions.png"))); // NOI18N
@@ -73,6 +78,11 @@ public class TeacherHome extends javax.swing.JFrame {
         jMenu8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jMenu8.setMargin(new java.awt.Insets(2, 5, 2, 10));
+        jMenu8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu8MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu8);
 
         jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete Question.png"))); // NOI18N
@@ -80,6 +90,11 @@ public class TeacherHome extends javax.swing.JFrame {
         jMenu9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu9.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jMenu9.setMargin(new java.awt.Insets(2, 5, 2, 10));
+        jMenu9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu9MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu9);
 
         jMenu10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all student result.png"))); // NOI18N
@@ -151,6 +166,42 @@ public class TeacherHome extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jf, "One form is allready open");
         }
     }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        // TODO add your handling code here:
+         if(open == 0){
+            new UpdateQuestion().setVisible(true);
+            open=1;
+        }else{
+            JFrame jf = new JFrame();
+            jf.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(jf, "One form is allready open");
+        }
+    }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu8MouseClicked
+        // TODO add your handling code here:
+         if(open == 0){
+            new AllQuestion().setVisible(true);
+            open=1;
+        }else{
+            JFrame jf = new JFrame();
+            jf.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(jf, "One form is allready open");
+        }
+    }//GEN-LAST:event_jMenu8MouseClicked
+
+    private void jMenu9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu9MouseClicked
+        // TODO add your handling code here:
+         if(open == 0){
+            new DeleteQuestion().setVisible(true);
+            open=1;
+        }else{
+            JFrame jf = new JFrame();
+            jf.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(jf, "One form is allready open");
+        }
+    }//GEN-LAST:event_jMenu9MouseClicked
 
     /**
      * @param args the command line arguments

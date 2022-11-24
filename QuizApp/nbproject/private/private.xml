@@ -5,8 +5,9 @@
         <group>
             <file>file:/D:/OMKAR/JAVA%20Projects/quizApp/QuizApp/src/quizapp/AddNewQuestion.java</file>
             <file>file:/D:/OMKAR/JAVA%20Projects/quizApp/QuizApp/src/quizapp/TeacherHome.java</file>
-            <file>file:/D:/OMKAR/JAVA%20Projects/quizApp/QuizApp/src/quizapp/Conn.java</file>
-            <file>file:/D:/OMKAR/JAVA%20Projects/quizApp/QuizApp/src/quizapp/StudentLogin.java</file>
+            <file>file:/D:/OMKAR/JAVA%20Projects/quizApp/QuizApp/src/quizapp/DeleteQuestion.java</file>
+            <file>file:/D:/OMKAR/JAVA%20Projects/quizApp/QuizApp/src/quizapp/UpdateQuestion.java</file>
+            <file>file:/D:/OMKAR/JAVA%20Projects/quizApp/QuizApp/src/quizapp/AllQuestion.java</file>
         </group>
     </open-files>
 </project-private>
