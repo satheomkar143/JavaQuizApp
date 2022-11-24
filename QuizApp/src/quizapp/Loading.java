@@ -140,7 +140,9 @@ public class Loading extends javax.swing.JFrame {
                     Lg.LoadingLabel.setText("Lets Start Quiz...");
                 }
                 if(i==101){
-                    Lg.setVisible(false);
+//                    Lg.setVisible(false);
+                         Lg.dispose();
+                new Login().setVisible(true);
                 }
                 Lg.LoadingBar.setValue(i);
             }

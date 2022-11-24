@@ -4,6 +4,8 @@
  */
 package quizapp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sathe
@@ -102,14 +104,27 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+//        this.setVisible(false);
+        dispose();
+        new StudentLogin().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+//        this.setVisible(false);
+
+        dispose();
+        new TeacherLogin().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+//        dispose();
+          int a = JOptionPane.showConfirmDialog(null,"do you really want to exit application?","Select",JOptionPane.YES_NO_OPTION);
+          if (a == 0){
+              System.exit(0);
+//              new Rules().setVisible(true);
+          }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
