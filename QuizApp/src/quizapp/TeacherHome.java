@@ -102,6 +102,11 @@ public class TeacherHome extends javax.swing.JFrame {
         jMenu10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu10.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jMenu10.setMargin(new java.awt.Insets(2, 5, 2, 10));
+        jMenu10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu10MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu10);
 
         jMenu11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logout.png"))); // NOI18N
@@ -202,6 +207,18 @@ public class TeacherHome extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jf, "One form is allready open");
         }
     }//GEN-LAST:event_jMenu9MouseClicked
+
+    private void jMenu10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu10MouseClicked
+        // TODO add your handling code here:
+         if(open == 0){
+            new AllStudentResult().setVisible(true);
+            open=1;
+        }else{
+            JFrame jf = new JFrame();
+            jf.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(jf, "One form is allready open");
+        }
+    }//GEN-LAST:event_jMenu10MouseClicked
 
     /**
      * @param args the command line arguments

@@ -4,28 +4,27 @@
  */
 package quizapp;
 import java.sql.*;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
-
 
 /**
  *
  * @author sathe
  */
-public class AllQuestion extends javax.swing.JFrame {
+public class AllStudentResult extends javax.swing.JFrame {
 
     /**
-     * Creates new form AllQuestion
+     * Creates new form AllStudentResult
      */
-    public AllQuestion() {
+    public AllStudentResult() {
         initComponents();
-        
         try {
             Connection con = Conn.getCon();
 //            Statement st = con.createStatement();
-            PreparedStatement pstat=con.prepareStatement("select * from question");
+            PreparedStatement pstat=con.prepareStatement("select * from student");
             ResultSet rs = pstat.executeQuery();
-        
+            jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -41,27 +40,21 @@ public class AllQuestion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setLocation(new java.awt.Point(150, 183));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all questions.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 23, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 51, 204));
-        jLabel2.setText("All Questions");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 28, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 109, 1066, 10));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
@@ -73,7 +66,25 @@ public class AllQuestion extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(953, 13, -1, -1));
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(453, 400));
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 51, 204));
+        jLabel2.setText("All Student Result");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 28, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all student result.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 23, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jLabel3.setText("Filter Students By Marks");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+
+        jTextField1.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 120, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,14 +97,12 @@ public class AllQuestion extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setMaximumSize(new java.awt.Dimension(2147483647, 1664));
-        jTable1.setPreferredSize(null);
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 1050, 380));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 1050, 330));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Midnight City.jpg"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Midnight City.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -103,6 +112,29 @@ public class AllQuestion extends javax.swing.JFrame {
         TeacherHome.open=0;
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        // TODO add your handling code here:
+        int marks;
+        if(jTextField1.getText().equals("")){
+            marks=0;
+        }else{
+            marks = Integer.parseInt(jTextField1.getText());
+            
+            try {
+                Connection con = Conn.getCon();
+    //            Statement st = con.createStatement();
+                PreparedStatement pstat=con.prepareStatement("select * from student where marks >= "+marks+"");
+                ResultSet rs = pstat.executeQuery();
+                jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
+                jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+            } catch (Exception e) {
+                JFrame jf = new JFrame();
+                jf.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(jf, e);
+            }
+        }
+    }//GEN-LAST:event_jTextField1KeyReleased
 
     /**
      * @param args the command line arguments
@@ -121,20 +153,20 @@ public class AllQuestion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AllQuestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllStudentResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AllQuestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllStudentResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AllQuestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllStudentResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AllQuestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllStudentResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AllQuestion().setVisible(true);
+                new AllStudentResult().setVisible(true);
             }
         });
     }
@@ -142,10 +174,12 @@ public class AllQuestion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
