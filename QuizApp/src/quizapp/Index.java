@@ -10,11 +10,20 @@ package quizapp;
  */
 public class Index extends javax.swing.JFrame {
 
+    public String userType;
+    public String username;
     /**
      * Creates new form Index
      */
     public Index() {
         initComponents();
+    }
+    
+    public Index(String user, String username) {
+        initComponents();
+        
+        userType = user;
+        this.username = username;
     }
 
     /**
@@ -27,6 +36,7 @@ public class Index extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,6 +53,9 @@ public class Index extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 354, 250, 60));
 
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/index_back.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
@@ -52,7 +65,9 @@ public class Index extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new TeacherHome().setVisible(true);
+        
+       dispose();
+        new ChooseTechnology( username).setVisible(true);     
                 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -94,5 +109,6 @@ public class Index extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     // End of variables declaration//GEN-END:variables
 }

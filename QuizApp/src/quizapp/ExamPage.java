@@ -184,6 +184,8 @@ public class ExamPage extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -194,6 +196,46 @@ public class ExamPage extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -215,33 +257,33 @@ public class ExamPage extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabel3.setText("Date:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabel4.setText("25/11/2022");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 20, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabel5.setText("Total Time:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 80, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabel6.setText("10 min");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 80, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
-        jLabel7.setText("Time Taken:");
+        jLabel7.setText("Next Question:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 140, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("00");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 140, 30, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 80, 30, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("00");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 140, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 140, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabel10.setText("15");
@@ -268,9 +310,18 @@ public class ExamPage extends javax.swing.JFrame {
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 140, 40, -1));
 
         jLabel13.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText(":");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1275, 138, 10, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1275, 78, 10, -1));
+
+        jLabel20.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jLabel20.setText("Time Taken:");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 80, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("00");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 80, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 205, 1370, 10));
@@ -325,6 +376,169 @@ public class ExamPage extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setPreferredSize(new java.awt.Dimension(100, 505));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel22.setText("01");
+        jLabel22.setPreferredSize(new java.awt.Dimension(30, 25));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, 35, -1));
+
+        jPanel3.setBackground(new java.awt.Color(51, 255, 51));
+        jPanel3.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 23, -1, -1));
+
+        jPanel5.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 167, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel24.setText("04");
+        jLabel24.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 167, -1, -1));
+
+        jPanel6.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 119, -1, -1));
+
+        jLabel25.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel25.setText("03");
+        jLabel25.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 119, -1, -1));
+
+        jPanel7.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 215, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel26.setText("05");
+        jLabel26.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 215, -1, -1));
+
+        jPanel8.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 263, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel27.setText("06");
+        jLabel27.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 263, -1, -1));
+
+        jPanel9.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 311, -1, -1));
+
+        jLabel28.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel28.setText("07");
+        jLabel28.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 311, -1, -1));
+
+        jPanel10.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 359, -1, -1));
+
+        jLabel29.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel29.setText("08");
+        jLabel29.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 359, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel30.setText("02");
+        jLabel30.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 71, -1, -1));
+
+        jPanel12.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 407, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel31.setText("09");
+        jLabel31.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 407, -1, -1));
+
+        jPanel13.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 455, -1, -1));
+
+        jLabel32.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel32.setText("10");
+        jLabel32.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 455, -1, -1));
+
+        jPanel4.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 71, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel23.setText("11");
+        jLabel23.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 23, -1, -1));
+
+        jPanel11.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 23, -1, -1));
+
+        jLabel33.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel33.setText("12");
+        jLabel33.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 71, -1, -1));
+
+        jPanel14.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 71, -1, -1));
+
+        jLabel34.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel34.setText("13");
+        jLabel34.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 119, -1, -1));
+
+        jLabel35.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel35.setText("14");
+        jLabel35.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 167, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel36.setText("15");
+        jLabel36.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 215, -1, -1));
+
+        jLabel37.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel37.setText("16");
+        jLabel37.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 263, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel38.setText("17");
+        jLabel38.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 311, -1, -1));
+
+        jLabel39.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel39.setText("18");
+        jLabel39.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 359, -1, -1));
+
+        jLabel40.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel40.setText("19");
+        jLabel40.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 407, -1, -1));
+
+        jLabel41.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel41.setText("20");
+        jLabel41.setPreferredSize(new java.awt.Dimension(35, 25));
+        jPanel2.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 455, -1, -1));
+
+        jPanel15.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 119, -1, -1));
+
+        jPanel16.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 167, -1, -1));
+
+        jPanel17.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 215, -1, -1));
+
+        jPanel18.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 263, -1, -1));
+
+        jPanel19.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 311, -1, -1));
+
+        jPanel20.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 359, -1, -1));
+
+        jPanel21.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 407, -1, -1));
+
+        jPanel22.setPreferredSize(new java.awt.Dimension(25, 25));
+        jPanel2.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 455, -1, -1));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 220, 505));
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ServQuick.jpg"))); // NOI18N
@@ -401,15 +615,57 @@ public class ExamPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;

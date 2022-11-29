@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package quizapp;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.Connection;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -36,24 +39,25 @@ public class StudentLogin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         EmailTextField = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
 
         jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(700, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0,80));
@@ -97,19 +101,6 @@ public class StudentLogin extends javax.swing.JFrame {
         });
         jPanel1.add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 250, 40));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 560, 500, 10));
-
-        jButton2.setBackground(new java.awt.Color(0, 102, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Exit");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 600, 80, 30));
 
         jButton3.setBackground(new java.awt.Color(0, 153, 153));
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -168,19 +159,6 @@ public class StudentLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 100, 40));
-
-        jButton7.setBackground(new java.awt.Color(0, 102, 153));
-        jButton7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setText("Back");
-        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, 80, 30));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 460, 500, 10));
 
         jPasswordField1.setBackground(new java.awt.Color(255, 204, 204));
@@ -209,11 +187,39 @@ public class StudentLogin extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 120, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 25, 650, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 650, 650));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/signIn.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 696, 696));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 696, 696));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jButton16.setBackground(new java.awt.Color(255, 255, 255,0));
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
+        jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton16.setPreferredSize(new java.awt.Dimension(70, 70));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+
+        jButton17.setBackground(new java.awt.Color(255, 255, 255,0));
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back student.png"))); // NOI18N
+        jButton17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton17.setPreferredSize(new java.awt.Dimension(70, 70));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/welcomeBackground.jpg"))); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -225,6 +231,8 @@ public class StudentLogin extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new ForgotPassword().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -236,30 +244,31 @@ public class StudentLogin extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-//        this.setVisible(false);
         dispose();
-        new Login().setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+        new ChangePassword().setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        if(EmailTextField.getText().equals("omkar") && jPasswordField1.getText().equals("omkar143"))
-        {
-            dispose();
-            new AfterLoading().setVisible(true);
-        }else
-        {
-            ImageIcon icon = new ImageIcon("Incorrect Password.png");
-            JOptionPane.showMessageDialog(null,"<html><b style=\" color:red;font-size:10px\">Incorrect <br>Email ID or Password</b></html>","Error",JOptionPane.INFORMATION_MESSAGE,icon);
+        try {
+              Connection con = Conn.getCon();
+              String emailId = EmailTextField.getText();
+              String password = jPasswordField1.getText();
+              Statement st = con.createStatement();
+              String sql = "select * from studentInfo where email = '"+emailId+"' and password = '"+password+"'";
+              ResultSet  rs = st.executeQuery(sql);
+              
+              if(rs.next()){
+                  dispose();
+                  new ChooseTechnology("username").setVisible(true);
+              }else{
+                   ImageIcon icon = new ImageIcon("Incorrect Password.png");
+                   JOptionPane.showMessageDialog(null,"<html><b style=\" color:red;font-size:10px\">Incorrect <br>Email ID or Password</b></html>","Wrong Credentials",JOptionPane.INFORMATION_MESSAGE,icon);
+                   EmailTextField.setText("");
+                   jPasswordField1.setText("");
+              }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
         
         
@@ -278,6 +287,21 @@ public class StudentLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
          jPasswordField1.setEchoChar('*');
     }//GEN-LAST:event_jLabel8MouseExited
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null,"do you really want to exit application?","Exit Application",JOptionPane.YES_NO_OPTION);
+        if (a == 0){
+            System.exit(0);
+            //              new Rules().setVisible(true);
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+            dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jButton17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,13 +340,14 @@ public class StudentLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EmailTextField;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -330,6 +355,7 @@ public class StudentLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;

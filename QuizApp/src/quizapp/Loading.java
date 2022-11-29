@@ -55,7 +55,7 @@ public class Loading extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 153, 255));
-        jLabel4.setText("Stay Connected Omkar...");
+        jLabel4.setText("Stay Connected ...");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
         LoadingBar.setBackground(new java.awt.Color(102, 255, 102));
@@ -142,6 +142,7 @@ public class Loading extends javax.swing.JFrame {
                 if(i==101){
 //                    Lg.setVisible(false);
                          Lg.dispose();
+              
                 new Login().setVisible(true);
                 }
                 Lg.LoadingBar.setValue(i);

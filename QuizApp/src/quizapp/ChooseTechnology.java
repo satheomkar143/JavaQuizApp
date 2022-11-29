@@ -4,17 +4,26 @@
  */
 package quizapp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sathe
  */
 public class ChooseTechnology extends javax.swing.JFrame {
 
+   
+     public String username;
     /**
      * Creates new form ChooseTechnology
      */
     public ChooseTechnology() {
         initComponents();
+    }
+    public ChooseTechnology( String username) {
+        initComponents();
+       
+        this.username = username;
     }
 
     /**
@@ -26,23 +35,194 @@ public class ChooseTechnology extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/c.png"))); // NOI18N
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/c++.png"))); // NOI18N
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 90, -1, -1));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/python.png"))); // NOI18N
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1034, 90, -1, -1));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/java.png"))); // NOI18N
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 90, -1, -1));
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/advanced-java.png"))); // NOI18N
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(813, 90, -1, -1));
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/html.png"))); // NOI18N
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 311, -1, -1));
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/angular.png"))); // NOI18N
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 532, -1, -1));
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/css.png"))); // NOI18N
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 311, -1, -1));
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/javascript.png"))); // NOI18N
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 311, -1, -1));
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jquery.png"))); // NOI18N
+        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton10.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(813, 311, -1, -1));
+
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bootstrap.png"))); // NOI18N
+        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton11.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1034, 311, -1, -1));
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nodejs.png"))); // NOI18N
+        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton12.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 532, -1, -1));
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/expressjs.png"))); // NOI18N
+        jButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton13.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 532, -1, -1));
+
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mysql.png"))); // NOI18N
+        jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton14.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(813, 532, -1, -1));
+
+        jButton15.setText("jButton15");
+        jButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton15.setPreferredSize(new java.awt.Dimension(180, 180));
+        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1034, 532, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Choose Technology");
+        jLabel1.setPreferredSize(new java.awt.Dimension(400, 50));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 20, -1, -1));
+
+        jButton16.setBackground(new java.awt.Color(255, 255, 255,0));
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
+        jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton16.setPreferredSize(new java.awt.Dimension(70, 70));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+
+        jButton17.setBackground(new java.awt.Color(255, 255, 255,0));
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logout.png"))); // NOI18N
+        jButton17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton17.setPreferredSize(new java.awt.Dimension(70, 70));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/index_back.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null,"do you really want to exit application?","Exit Application",JOptionPane.YES_NO_OPTION);
+          if (a == 0){
+              System.exit(0);
+//              new Rules().setVisible(true);
+          }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        
+        int a = JOptionPane.showConfirmDialog(null,"do you really want to sign out?","User Sign Out",JOptionPane.YES_NO_OPTION);
+          if (a == 0){
+              dispose();
+        new Login().setVisible(true);
+          }
+        
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+      
+            dispose();
+            new AfterLoading(username).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +260,25 @@ public class ChooseTechnology extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

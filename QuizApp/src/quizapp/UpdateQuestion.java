@@ -31,8 +31,6 @@ public class UpdateQuestion extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -50,61 +48,62 @@ public class UpdateQuestion extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
+        jButton18 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
-        setLocation(new java.awt.Point(150, 183));
+        setLocation(new java.awt.Point(0, 0));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Update Question.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 23, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 51, 204));
         jLabel2.setText("Update Question");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 28, -1, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(953, 13, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 109, 1066, 10));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Question ID:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 115, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Question:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Option 2:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Option 1:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Option 3:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Option 4:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, -1, -1));
 
         jTextField1.setBackground(new java.awt.Color(189, 245, 246));
         jTextField1.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
@@ -114,17 +113,17 @@ public class UpdateQuestion extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 155, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, -1, -1));
 
         jTextField2.setBackground(new java.awt.Color(189, 245, 246));
         jTextField2.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jTextField2.setPreferredSize(new java.awt.Dimension(700, 40));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 205, -1, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, -1, -1));
 
         jTextField3.setBackground(new java.awt.Color(189, 245, 246));
         jTextField3.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jTextField3.setPreferredSize(new java.awt.Dimension(700, 40));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 255, -1, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, -1, -1));
 
         jTextField4.setBackground(new java.awt.Color(189, 245, 246));
         jTextField4.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
@@ -134,12 +133,12 @@ public class UpdateQuestion extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 305, -1, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, -1, -1));
 
         jTextField5.setBackground(new java.awt.Color(189, 245, 246));
         jTextField5.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jTextField5.setPreferredSize(new java.awt.Dimension(700, 40));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 355, -1, -1));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 530, -1, -1));
 
         UpdateButton.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         UpdateButton.setForeground(new java.awt.Color(0, 102, 102));
@@ -151,7 +150,7 @@ public class UpdateQuestion extends javax.swing.JFrame {
                 UpdateButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(UpdateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 456, -1, -1));
+        getContentPane().add(UpdateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 630, -1, -1));
 
         ClearButton.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         ClearButton.setForeground(new java.awt.Color(0, 102, 102));
@@ -163,17 +162,17 @@ public class UpdateQuestion extends javax.swing.JFrame {
                 ClearButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(ClearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 456, -1, -1));
+        getContentPane().add(ClearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 630, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Answer:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 580, -1, -1));
 
         jTextField6.setBackground(new java.awt.Color(189, 245, 246));
         jTextField6.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jTextField6.setPreferredSize(new java.awt.Dimension(700, 40));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 405, -1, -1));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, -1, -1));
 
         jTextField7.setBackground(new java.awt.Color(189, 245, 246));
         jTextField7.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
@@ -183,7 +182,7 @@ public class UpdateQuestion extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 115, -1, -1));
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, -1, -1));
 
         searchButton.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         searchButton.setForeground(new java.awt.Color(0, 102, 102));
@@ -196,10 +195,120 @@ public class UpdateQuestion extends javax.swing.JFrame {
                 searchButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 115, -1, -1));
+        getContentPane().add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, -1, -1));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add new question.png"))); // NOI18N
+        jButton2.setText("Add New Question");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jButton2.setPreferredSize(new java.awt.Dimension(270, 70));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 205, -1, -1));
+
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Update Question.png"))); // NOI18N
+        jButton3.setText("Update Question");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jButton3.setPreferredSize(new java.awt.Dimension(270, 70));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 300, -1, -1));
+
+        jButton4.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all questions.png"))); // NOI18N
+        jButton4.setText("All Question");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jButton4.setPreferredSize(new java.awt.Dimension(270, 70));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 395, -1, -1));
+
+        jButton5.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete Question.png"))); // NOI18N
+        jButton5.setText("Delete Question");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jButton5.setPreferredSize(new java.awt.Dimension(270, 70));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 490, -1, -1));
+
+        jButton6.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all student result.png"))); // NOI18N
+        jButton6.setText("All Student Result");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jButton6.setPreferredSize(new java.awt.Dimension(270, 70));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 585, -1, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cool Blues.jpg"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 300, 500));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 950, 10));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Midnight City.jpg"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel10.setPreferredSize(new java.awt.Dimension(1066, 500));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 950, -1));
+
+        jButton18.setBackground(new java.awt.Color(255, 255, 255,0));
+        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back student.png"))); // NOI18N
+        jButton18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton18.setPreferredSize(new java.awt.Dimension(70, 70));
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, -1, -1));
+
+        jButton17.setBackground(new java.awt.Color(255, 255, 255,0));
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logout.png"))); // NOI18N
+        jButton17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton17.setPreferredSize(new java.awt.Dimension(70, 70));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
+
+        jButton16.setBackground(new java.awt.Color(255, 255, 255,0));
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
+        jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton16.setPreferredSize(new java.awt.Dimension(70, 70));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/index_back.jpg"))); // NOI18N
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -266,12 +375,6 @@ public class UpdateQuestion extends javax.swing.JFrame {
         jTextField7.setEditable(true);
     }//GEN-LAST:event_ClearButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        TeacherHome.open=0;
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
@@ -304,6 +407,60 @@ public class UpdateQuestion extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(jf, e);
         }
     }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new AddNewQuestion().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new AllQuestion().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new DeleteQuestion().setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new AllStudentResult().setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new ChooseTechnology().setVisible(true);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+
+        int a = JOptionPane.showConfirmDialog(null,"do you really want to sign out?","User Sign Out",JOptionPane.YES_NO_OPTION);
+        if (a == 0){
+            dispose();
+            new Login().setVisible(true);
+        }
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null,"do you really want to exit application?","Exit Application",JOptionPane.YES_NO_OPTION);
+        if (a == 0){
+            System.exit(0);
+            //              new Rules().setVisible(true);
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -344,10 +501,20 @@ public class UpdateQuestion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ClearButton;
     private javax.swing.JButton UpdateButton;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

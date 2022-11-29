@@ -19,6 +19,9 @@ public class TeacherHome extends javax.swing.JFrame {
     public TeacherHome() {
         initComponents();
     }
+    public TeacherHome(String username) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
