@@ -4,7 +4,11 @@
  */
 package quizapp;
 
+import java.io.FileOutputStream;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import org.jdom.Document;
+
 
 /**
  *
@@ -12,16 +16,30 @@ import javax.swing.JOptionPane;
  */
 public class SuccessfullySubmited extends javax.swing.JFrame {
 
+    String studentId;
+    String language;
     /**
      * Creates new form SuccessfullySubmited
      */
     public SuccessfullySubmited() {
         initComponents();
     }
-    public SuccessfullySubmited(String marks) {
+    public SuccessfullySubmited(String studentId, String language, String marks) {
         initComponents();
+        
+        this.studentId = studentId;
+        this.language = language;
+        
         String mark = "Marks obtained : "+marks;
-        jLabel2.setText(mark);
+        jLabel5.setText(mark);
+        
+        String result  = "congratulations. You Passed !";
+        
+         int finalMark = Integer.parseInt(marks);
+        if(finalMark < 10){
+            result = "You Failed. Try again";
+        }
+        jLabel4.setText(result);
     }
 
     /**
@@ -37,9 +55,10 @@ public class SuccessfullySubmited extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,9 +94,6 @@ public class SuccessfullySubmited extends javax.swing.JFrame {
         });
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jButton1.setText("Try Another");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -98,6 +114,18 @@ public class SuccessfullySubmited extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, -1, -1));
 
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jButton3.setText("print result");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 700, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/index_back.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -116,14 +144,35 @@ public class SuccessfullySubmited extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new ChooseTechnology().setVisible(true);
+        new ChooseTechnology("student",studentId).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new ExamPage().setVisible(true);
+        new ExamPage(studentId, language).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+//        String path="";
+//        JFileChooser j =new JFileChooser();
+//        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+//        int x = j.showSaveDialog(this);
+//        
+//        if(x == JFileChooser.APPROVE_OPTION){
+//            path =j.getSelectedFile().getPath();
+//        }
+//        
+//        Document doc = new Document();
+// 
+////                
+//                
+                
+               
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,10 +213,11 @@ public class SuccessfullySubmited extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

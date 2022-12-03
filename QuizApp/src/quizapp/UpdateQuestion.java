@@ -13,11 +13,18 @@ import javax.swing.JOptionPane;
  */
 public class UpdateQuestion extends javax.swing.JFrame {
 
+    public String language;
     /**
      * Creates new form AddNewQuestion
      */
     public UpdateQuestion() {
         initComponents();
+    }
+    
+    public UpdateQuestion(String language) {
+        initComponents();
+        this.language = language;
+        jLabel12.setText(language);
     }
 
     /**
@@ -54,12 +61,13 @@ public class UpdateQuestion extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton18 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -264,10 +272,13 @@ public class UpdateQuestion extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cool Blues.jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 300, 500));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 950, 10));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1039, 200, 270, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Midnight City.jpg"))); // NOI18N
         jLabel10.setPreferredSize(new java.awt.Dimension(1066, 500));
@@ -306,6 +317,9 @@ public class UpdateQuestion extends javax.swing.JFrame {
         });
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/index_back.jpg"))); // NOI18N
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -334,7 +348,7 @@ public class UpdateQuestion extends javax.swing.JFrame {
         try {
             if (!"".equals(id) && !"".equals(ques)  && !"".equals(opt1) && !"".equals(opt2) &&  !"".equals(opt3) && !"".equals(opt4) && !"".equals(answer)) {
                  Connection con = Conn.getCon();
-                PreparedStatement ps= con.prepareStatement("update question set ques=?, opt1=?, opt2=?, opt3=?, opt4=?, answer=? where id=?", ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE); 
+                PreparedStatement ps= con.prepareStatement("update "+language+" set ques=?, opt1=?, opt2=?, opt3=?, opt4=?, answer=? where id=?", ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE); 
              
                 ps.setString(1, ques);
                 ps.setString(2, opt1);
@@ -348,7 +362,7 @@ public class UpdateQuestion extends javax.swing.JFrame {
                 jf.setAlwaysOnTop(true);
                 JOptionPane.showMessageDialog(jf, "Successfully Updated");
                 dispose();
-                new UpdateQuestion().setVisible(true);
+                new UpdateQuestion(language).setVisible(true);
             } else {
                  JFrame jf = new JFrame();
                 jf.setAlwaysOnTop(true);
@@ -386,7 +400,7 @@ public class UpdateQuestion extends javax.swing.JFrame {
         try {
              Connection con = Conn.getCon();
 //             Statement st = con.createStatement();
-              PreparedStatement pstat=con.prepareStatement("select * from question where id = '"+id+"'", ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+              PreparedStatement pstat=con.prepareStatement("select * from "+language+" where id = '"+id+"'", ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
              ResultSet rs = pstat.executeQuery();
              if(rs.next()){
                  jTextField1.setText(rs.getString(2));
@@ -411,7 +425,7 @@ public class UpdateQuestion extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new AddNewQuestion().setVisible(true);
+        new AddNewQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -422,25 +436,25 @@ public class UpdateQuestion extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new AllQuestion().setVisible(true);
+        new AllQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new DeleteQuestion().setVisible(true);
+        new DeleteQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new AllStudentResult().setVisible(true);
+        new AllStudentResult(language).setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new ChooseTechnology().setVisible(true);
+        new ChooseTechnology("teacher","").setVisible(true);
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -515,6 +529,7 @@ public class UpdateQuestion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

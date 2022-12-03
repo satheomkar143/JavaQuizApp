@@ -14,17 +14,27 @@ import net.proteanit.sql.DbUtils;
  */
 public class AllStudentResult extends javax.swing.JFrame {
 
+    
+    public String language;
     /**
      * Creates new form AllStudentResult
      */
     public AllStudentResult() {
         initComponents();
+        
+    }
+    
+    public AllStudentResult(String language) {
+        initComponents();
+        this.language = language;
+        jLabel12.setText(language);
+        
         try {
             Connection con = Conn.getCon();
 //            Statement st = con.createStatement();
-            PreparedStatement pstat=con.prepareStatement("select * from student");
+            PreparedStatement pstat=con.prepareStatement("select studentInfo.*,  "+this.language+"Mark, "+this.language+"Attempt from studentInfo, studentMarks where studentInfo.email = studentMarks.email");
             ResultSet rs = pstat.executeQuery();
-            jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
+//            jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -52,18 +62,18 @@ public class AllStudentResult extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
@@ -98,6 +108,7 @@ public class AllStudentResult extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setPreferredSize(new java.awt.Dimension(900, 1000));
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 930, 350));
@@ -169,10 +180,13 @@ public class AllStudentResult extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cool Blues.jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 300, 500));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 950, 10));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1039, 200, 270, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Midnight City.jpg"))); // NOI18N
         jLabel10.setPreferredSize(new java.awt.Dimension(1066, 500));
@@ -211,9 +225,12 @@ public class AllStudentResult extends javax.swing.JFrame {
         });
         getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, -1, -1));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/index_back.jpg"))); // NOI18N
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -229,7 +246,8 @@ public class AllStudentResult extends javax.swing.JFrame {
             try {
                 Connection con = Conn.getCon();
     //            Statement st = con.createStatement();
-                PreparedStatement pstat=con.prepareStatement("select * from student where marks >= "+marks+"");
+//                PreparedStatement pstat=con.prepareStatement("select * from studentMarks where "+language+"Mark >= "+marks+"");
+                PreparedStatement pstat = con.prepareStatement("select studentInfo.*, "+language+"Mark, "+language+"Attempt from studentInfo, studentMarks where studentInfo.email = studentMarks.email and "+language+"Mark >="+marks+"");
                 ResultSet rs = pstat.executeQuery();
                 jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
                 jTable1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -244,29 +262,31 @@ public class AllStudentResult extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new AddNewQuestion().setVisible(true);
+        new AddNewQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new UpdateQuestion().setVisible(true);
+        new UpdateQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new AllQuestion().setVisible(true);
+        new AllQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new DeleteQuestion().setVisible(true);
+        new DeleteQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new AllStudentResult(language).setVisible(true);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -292,7 +312,7 @@ public class AllStudentResult extends javax.swing.JFrame {
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new ChooseTechnology().setVisible(true);
+        new ChooseTechnology("teacher", "").setVisible(true);
     }//GEN-LAST:event_jButton18ActionPerformed
 
     /**
@@ -346,6 +366,7 @@ public class AllStudentResult extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;

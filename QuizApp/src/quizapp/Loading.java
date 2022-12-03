@@ -49,7 +49,7 @@ public class Loading extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 523, 250));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo - Copy - Copy.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlacksmall.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 32));
 

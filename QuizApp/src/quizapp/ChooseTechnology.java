@@ -12,18 +12,26 @@ import javax.swing.JOptionPane;
  */
 public class ChooseTechnology extends javax.swing.JFrame {
 
+  
+     public String userType;
+    public String studentId;
    
-     public String username;
     /**
      * Creates new form ChooseTechnology
      */
     public ChooseTechnology() {
         initComponents();
     }
-    public ChooseTechnology( String username) {
+    public ChooseTechnology(String userType, String studentId) {
         initComponents();
        
-        this.username = username;
+        this.userType = userType;
+         this.studentId = studentId;
+       
+        
+        
+//        System.out.println(this.username);
+        
     }
 
     /**
@@ -70,8 +78,8 @@ public class ChooseTechnology extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/c++.png"))); // NOI18N
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -96,61 +104,121 @@ public class ChooseTechnology extends javax.swing.JFrame {
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/java.png"))); // NOI18N
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 90, -1, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/advanced-java.png"))); // NOI18N
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(813, 90, -1, -1));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/html.png"))); // NOI18N
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 311, -1, -1));
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/angular.png"))); // NOI18N
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton7.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 532, -1, -1));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/css.png"))); // NOI18N
         jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton8.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 311, -1, -1));
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/javascript.png"))); // NOI18N
         jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton9.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 311, -1, -1));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jquery.png"))); // NOI18N
         jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton10.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(813, 311, -1, -1));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bootstrap.png"))); // NOI18N
         jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton11.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1034, 311, -1, -1));
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nodejs.png"))); // NOI18N
         jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton12.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 532, -1, -1));
 
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/expressjs.png"))); // NOI18N
         jButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton13.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 532, -1, -1));
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mysql.png"))); // NOI18N
         jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton14.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(813, 532, -1, -1));
 
         jButton15.setText("jButton15");
         jButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton15.setPreferredSize(new java.awt.Dimension(180, 180));
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1034, 532, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
@@ -191,6 +259,13 @@ public class ChooseTechnology extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"python").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("python").setVisible(true);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -216,13 +291,159 @@ public class ChooseTechnology extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
       
+        if ("student".equals(userType)) {
             dispose();
-            new AfterLoading(username).setVisible(true);
+            new AfterLoading(studentId,"c").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("c").setVisible(true);
+        }
+           
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"cpp").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("cpp").setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+          if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"html").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("html").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"java").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("java").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"advJava").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("advJava").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"css").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("css").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"javascript").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("javascript").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"jquery").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("jquery").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"bootstrap").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("bootstrap").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"angular").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("angular").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"nodejs").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("nodejs").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"expressjs").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("expressjs").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"mysql").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("mysql").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+           if ("student".equals(userType)) {
+            dispose();
+            new AfterLoading(studentId,"mongodb").setVisible(true);
+        } else if("teacher".equals(userType)){
+            dispose();
+             new AddNewQuestion("mongodb").setVisible(true);
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
      * @param args the command line arguments

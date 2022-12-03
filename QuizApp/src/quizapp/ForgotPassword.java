@@ -4,6 +4,9 @@
  */
 package quizapp;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -56,7 +59,6 @@ public class ForgotPassword extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
@@ -127,6 +129,11 @@ public class ForgotPassword extends javax.swing.JFrame {
         jTextField6.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jTextField6.setForeground(new java.awt.Color(0, 0, 0));
         jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField6FocusLost(evt);
+            }
+        });
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -177,12 +184,17 @@ public class ForgotPassword extends javax.swing.JFrame {
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setPreferredSize(new java.awt.Dimension(250, 45));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 84, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jButton16.setBackground(new java.awt.Color(255, 255, 255,0));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
@@ -253,6 +265,68 @@ public class ForgotPassword extends javax.swing.JFrame {
         }
        
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusLost
+        // TODO add your handling code here:
+        
+         String email = jTextField6.getText().trim();
+        
+        try {
+             Connection con = Conn.getCon();
+             Statement st = con.createStatement();
+             String sql="";
+             
+             if("student".equals(user)){
+                 sql = "select * from studentInfo where email = '"+email+"'";
+             }else if("teacher".equals(user)){
+                 sql = "select * from teacherInfo where email = '"+email+"'";
+             }
+             
+              ResultSet  rs = st.executeQuery(sql);
+              
+              if (rs.next()) {
+                jTextField7.setText(rs.getString("userName"));
+                jTextField8.setText(rs.getString("security"));
+            } else {
+                  JOptionPane.showMessageDialog(null, "This Email is not Registered with us.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jTextField6FocusLost
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        String email = jTextField6.getText().trim();
+        
+        try {
+             Connection con = Conn.getCon();
+             Statement st = con.createStatement();
+             String sql="";
+             
+             if("student".equals(user)){
+                 sql = "select * from studentInfo where email = '"+email+"'";
+             }else if("teacher".equals(user)){
+                 sql = "select * from teacherInfo where email = '"+email+"'";
+             }
+             
+              ResultSet  rs = st.executeQuery(sql);
+              
+              if (rs.next()) {
+                String answer = jTextField9.getText().trim();
+                if(answer.equals(rs.getString("answer"))){
+                    jTextField5.setText(rs.getString("password"));
+                }else{
+                    JOptionPane.showMessageDialog(null, "Enter correct Answer.");
+                }
+            } else {
+                  JOptionPane.showMessageDialog(null, "This Email is not Registered with us.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

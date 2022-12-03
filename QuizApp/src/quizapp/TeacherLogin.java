@@ -22,6 +22,10 @@ public class TeacherLogin extends javax.swing.JFrame {
     public TeacherLogin() {
         initComponents();
     }
+    public TeacherLogin(String email) {
+        initComponents();
+        jTextField2.setText(email);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -194,8 +198,8 @@ public class TeacherLogin extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 30, 696, 696));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jButton17.setBackground(new java.awt.Color(255, 255, 255,0));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back student.png"))); // NOI18N
@@ -233,7 +237,7 @@ public class TeacherLogin extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new ForgotPassword().setVisible(true);
+        new ForgotPassword("teacher").setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -245,7 +249,7 @@ public class TeacherLogin extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new ChangePassword().setVisible(true);
+        new ChangePassword("teacher").setVisible(true);
 
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -262,7 +266,7 @@ public class TeacherLogin extends javax.swing.JFrame {
               
               if(rs.next()){
                   dispose();
-                  new ChooseTechnology().setVisible(true);
+                  new ChooseTechnology("teacher","").setVisible(true);
               }else{
                    ImageIcon icon = new ImageIcon("Incorrect Password.png");
                    JOptionPane.showMessageDialog(null,"<html><b style=\" color:red;font-size:10px\">Incorrect <br>Email ID or Password</b></html>","Wrong Credentials",JOptionPane.INFORMATION_MESSAGE,icon);

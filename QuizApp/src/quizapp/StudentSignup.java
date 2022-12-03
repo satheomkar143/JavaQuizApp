@@ -4,20 +4,49 @@
  */
 package quizapp;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import java.util.regex.*;
-
+import java.io.OutputStreamWriter;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.sql.PreparedStatement;
+import java.util.Random;
 /**
  *
  * @author sathe
  */
 public class StudentSignup extends javax.swing.JFrame {
 
+//    String[] userId = new String[WIDTH];
+    LinkedList<String> userId=new LinkedList<>();  
+    
+    int OTP;
     /**
      * Creates new form StudentSignup
      */
     public StudentSignup() {
         initComponents();
+        
+         try {
+             Connection con = Conn.getCon();
+              Statement st = con.createStatement();
+              String sql = "select id from studentInfo";
+              ResultSet rs = st.executeQuery(sql);      
+              while(rs.next()){
+                  userId.add(rs.getString(1));
+              }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**
@@ -59,6 +88,8 @@ public class StudentSignup extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
@@ -145,6 +176,11 @@ public class StudentSignup extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField2KeyReleased(evt);
+            }
+        });
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 250, 30));
 
         jTextField3.setBackground(new java.awt.Color(204, 255, 204));
@@ -170,6 +206,11 @@ public class StudentSignup extends javax.swing.JFrame {
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
+            }
+        });
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
             }
         });
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 250, 30));
@@ -213,6 +254,11 @@ public class StudentSignup extends javax.swing.JFrame {
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
+            }
+        });
+        jTextField7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField7KeyReleased(evt);
             }
         });
         jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 345, 250, 30));
@@ -259,6 +305,11 @@ public class StudentSignup extends javax.swing.JFrame {
                 jTextField8ActionPerformed(evt);
             }
         });
+        jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField8KeyReleased(evt);
+            }
+        });
         jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 465, 250, 30));
 
         jButton5.setBackground(new java.awt.Color(0, 153, 153));
@@ -299,34 +350,44 @@ public class StudentSignup extends javax.swing.JFrame {
         jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 105, 250, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setText("ffff");
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("*");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 250, 20));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("ffffffff");
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("*");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 250, 20));
 
         jLabel16.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel16.setText("ffffffff");
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("*");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 250, 20));
 
         jLabel17.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel17.setText("ffffffff");
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("*");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 250, 20));
 
         jLabel18.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel18.setText("ffffffff");
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("*");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 250, 20));
 
         jLabel19.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel19.setText("ffffffff");
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("*");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 250, 20));
+
+        jLabel20.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("*");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 250, 20));
+
+        jLabel21.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("*");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 555, 250, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 650, 650));
 
@@ -355,8 +416,8 @@ public class StudentSignup extends javax.swing.JFrame {
         });
         getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/welcomeBackground.jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -390,7 +451,22 @@ public class StudentSignup extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:  send massage
+        
+        try {
+			// Construct data
+			
+                        
+                        Random rand = new Random();
+                        OTP = rand.nextInt(99999);
+                        String name = jTextField9.getText().trim();
+                   
+			
+                        JOptionPane.showMessageDialog(null, "Hi "+name+". Your OTP "+OTP);
+		} catch (Exception e) {
+//		
+                        JOptionPane.showMessageDialog(null, e);
+		}
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -414,6 +490,72 @@ public class StudentSignup extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        
+        String idErr = jLabel20.getText();
+        String nameErr = jLabel3.getText();
+        String emailErr = jLabel4.getText();
+        String mobileErr = jLabel16.getText();
+        String passErr = jLabel17.getText();
+        String confPassErr = jLabel18.getText();
+        String answerErr = jLabel19.getText();
+        String OTPErr = jLabel21.getText();
+        
+        if("".equals(idErr) && "".equals(nameErr) && "".equals(emailErr) && "".equals(mobileErr) && "".equals(passErr) && "".equals(confPassErr) && "".equals(answerErr) && "Account Varified".equals(OTPErr)){
+           
+             String id = jTextField4.getText();
+             String userName = jTextField9.getText();
+            String email = jTextField5.getText();
+            String mobile = jTextField3.getText();
+            String password = jTextField6.getText();
+            String security = jComboBox1.getSelectedItem().toString();
+            String answer = jTextField8.getText();
+            
+            
+            try {
+                Connection con = Conn.getCon();
+                PreparedStatement ps= con.prepareStatement("insert into studentInfo values(?,?,?,?,?,?,?)");
+                
+                ps.setString(1, id);
+                ps.setString(2, userName);
+                ps.setString(3, email);
+                ps.setString(4, mobile);
+                ps.setString(5, password);
+                ps.setString(6, security);
+                ps.setString(7, answer);
+                ps.executeUpdate();
+                
+                PreparedStatement ps2= con.prepareStatement("insert into studentMarks (email) values(?)");
+                ps2.setString(1, email);
+                ps2.executeUpdate();
+                
+                JOptionPane.showMessageDialog(null, "signup Successfull.");
+                dispose();
+                new StudentLogin(jTextField5.getText()).setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }             
+
+        }else{
+            if(idErr != ""){
+                JOptionPane.showMessageDialog(null, "Enter correct student Id");
+            }else if(nameErr != ""){
+                JOptionPane.showMessageDialog(null, "Enter correct name");
+            }else if(emailErr != ""){
+                JOptionPane.showMessageDialog(null, "Enter correct Email Id");
+            }else if(mobileErr != ""){
+                JOptionPane.showMessageDialog(null, "Enter correct mobile number");
+            }else if(passErr != ""){
+                JOptionPane.showMessageDialog(null, "minimum 8 characters required in password");
+            }else if(confPassErr != ""){
+                JOptionPane.showMessageDialog(null, "password must be same");
+            }else if(answerErr != ""){
+                JOptionPane.showMessageDialog(null, "Please fill security answer");
+            }else if(OTPErr != "Account Varified"){
+                JOptionPane.showMessageDialog(null, "Enter correct OTP");
+            }
+        }
+       
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
@@ -431,6 +573,7 @@ public class StudentSignup extends javax.swing.JFrame {
         Matcher match = namePattern.matcher(jTextField9.getText().trim());
         
         if(!match.matches()){
+            jLabel3.setForeground(new java.awt.Color(255, 0, 0));
             jLabel3.setText("Incorrect Name");
         }else{
              jLabel3.setText("");
@@ -444,6 +587,7 @@ public class StudentSignup extends javax.swing.JFrame {
         Matcher match = emailPattern.matcher(jTextField5.getText().trim());
         
         if(!match.matches()){
+            jLabel4.setForeground(new java.awt.Color(255, 0, 0));
             jLabel4.setText("Incorrect email id");
         }else{
              jLabel4.setText("");
@@ -457,6 +601,7 @@ public class StudentSignup extends javax.swing.JFrame {
         Matcher match = mobilePattern.matcher(jTextField3.getText().trim());
         
         if(!match.matches()){
+            jLabel16.setForeground(new java.awt.Color(255, 0, 0));
             jLabel16.setText("Incorrect mobile number");
         }else{
              jLabel16.setText("");
@@ -465,14 +610,76 @@ public class StudentSignup extends javax.swing.JFrame {
 
     private void jTextField6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyReleased
         // TODO add your handling code here:
-         int length = jTextField6.getText().length();
+         int length = jTextField6.getText().trim().length();
         
          if(length<8){
+             jLabel17.setForeground(new java.awt.Color(255, 0, 0));
             jLabel17.setText("minimum 8 characters required");
         }else{
              jLabel17.setText("");
         }
     }//GEN-LAST:event_jTextField6KeyReleased
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+        // TODO add your handling code here:
+         String PATTERN = "^[0-9]{1,10}$";
+        Pattern idPattern = Pattern.compile(PATTERN);
+        Matcher match = idPattern.matcher(jTextField4.getText().trim());
+        
+        if(!match.matches()){
+            jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel20.setText("only number Allowed");
+        }else{
+              String id =jTextField4.getText();
+          for(int i=0; i<userId.size();i++){
+              if(id.equals(userId.get(i))){
+                  jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+                  jLabel20.setText("id already exist");
+                  break;
+              }else{
+                  jLabel20.setText("");
+              }
+          }
+        }
+        
+         
+    }//GEN-LAST:event_jTextField4KeyReleased
+
+    private void jTextField7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField7KeyReleased
+        // TODO add your handling code here:
+        
+        String Password  = jTextField6.getText().trim();
+        String PasswordConf = jTextField7.getText().trim();
+        
+        if(Password.equals(PasswordConf)){
+            jLabel18.setText("");
+        }else{
+            jLabel18.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel18.setText("Password must be same");
+        }
+    }//GEN-LAST:event_jTextField7KeyReleased
+
+    private void jTextField8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyReleased
+        // TODO add your handling code here:
+        String answer = jTextField8.getText().trim();
+        if(answer.length()>0){
+            jLabel19.setText("");
+        }else{
+            jLabel19.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel19.setText("Answer required");
+        }
+    }//GEN-LAST:event_jTextField8KeyReleased
+
+    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+        // TODO add your handling code here:
+        if(OTP == Integer.parseInt(jTextField2.getText())){
+            jLabel21.setForeground(new java.awt.Color(0, 255, 0));
+            jLabel21.setText("Account Varified");
+        }else{
+            jLabel21.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel21.setText("Incorrect OTP");
+        }
+    }//GEN-LAST:event_jTextField2KeyReleased
 
     /**
      * @param args the command line arguments
@@ -527,6 +734,8 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

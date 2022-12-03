@@ -4,6 +4,10 @@
  */
 package quizapp;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -104,6 +108,11 @@ public class ChangePassword extends javax.swing.JFrame {
         jTextField6.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jTextField6.setForeground(new java.awt.Color(0, 0, 0));
         jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField6FocusLost(evt);
+            }
+        });
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -123,7 +132,6 @@ public class ChangePassword extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 250, 30));
 
-        jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(204, 255, 204));
         jTextField8.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jTextField8.setForeground(new java.awt.Color(0, 0, 0));
@@ -163,8 +171,8 @@ public class ChangePassword extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 84, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jButton16.setBackground(new java.awt.Color(255, 255, 255,0));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
@@ -212,6 +220,44 @@ public class ChangePassword extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        try {
+            String email = jTextField6.getText().trim();
+             Connection con = Conn.getCon();
+             Statement st = con.createStatement();
+             String sql="";
+             if("student".equals(user)){
+                 sql = "select * from studentInfo where email = '"+email+"'";
+             }else if("teacher".equals(user)){
+                 sql = "select * from teacherInfo where email = '"+email+"'";
+             }
+              ResultSet  rs = st.executeQuery(sql);
+              if (rs.next()) {
+                String oldPass = jTextField8.getText().trim();
+                String newPass = jTextField9.getText().trim();
+                
+                if(oldPass.equals(rs.getString("password"))){
+                    
+                     if("student".equals(user)){
+                        PreparedStatement  ps= con.prepareStatement("update studentInfo set password = '"+newPass+"' where email = '"+email+"'");
+                           ps.executeUpdate();
+                    }else if("teacher".equals(user)){
+                        PreparedStatement   ps= con.prepareStatement("update teacherInfo set password = '"+newPass+"' where email = '"+email+"'");
+                           ps.executeUpdate();
+                    }
+                    
+                 
+                    JOptionPane.showMessageDialog(null, "Password Successfully Changed");
+                }else{
+                  JOptionPane.showMessageDialog(null, "Please enter your correct old password.");
+              }
+                
+            } else {
+             
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -233,6 +279,34 @@ public class ChangePassword extends javax.swing.JFrame {
             new StudentLogin().setVisible(true);
         }
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusLost
+        // TODO add your handling code here:
+        
+        String email = jTextField6.getText().trim();
+        
+        try {
+             Connection con = Conn.getCon();
+             Statement st = con.createStatement();
+             String sql="";
+             
+             if("student".equals(user)){
+                 sql = "select * from studentInfo where email = '"+email+"'";
+             }else if("teacher".equals(user)){
+                 sql = "select * from teacherInfo where email = '"+email+"'";
+             }
+             
+              ResultSet  rs = st.executeQuery(sql);
+              
+              if (rs.next()) {
+                jTextField7.setText(rs.getString("userName"));
+            } else {
+                  JOptionPane.showMessageDialog(null, "This Email is not Registered with us.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jTextField6FocusLost
 
     /**
      * @param args the command line arguments

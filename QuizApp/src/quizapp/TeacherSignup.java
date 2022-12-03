@@ -4,6 +4,9 @@
  */
 package quizapp;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import java.util.regex.*;
 
@@ -13,6 +16,8 @@ import java.util.regex.*;
  */
 public class TeacherSignup extends javax.swing.JFrame {
 
+    
+     int OTP;
     /**
      * Creates new form StudentSignup
      */
@@ -47,13 +52,17 @@ public class TeacherSignup extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton4 = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel18 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
@@ -77,8 +86,8 @@ public class TeacherSignup extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 200, 40));
 
         jLabel14.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel14.setText("ffffffff");
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("*");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 250, 20));
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
@@ -143,6 +152,11 @@ public class TeacherSignup extends javax.swing.JFrame {
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
+            }
+        });
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField2KeyReleased(evt);
             }
         });
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 465, 250, 30));
@@ -220,6 +234,11 @@ public class TeacherSignup extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
+        jTextField7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField7KeyReleased(evt);
+            }
+        });
         jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 345, 250, 30));
 
         jComboBox1.setBackground(new java.awt.Color(204, 255, 204));
@@ -228,10 +247,44 @@ public class TeacherSignup extends javax.swing.JFrame {
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 405, 250, 32));
 
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("*");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 250, 20));
+
+        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("*");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 250, 20));
+
+        jLabel15.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("*");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 250, 20));
+
+        jLabel16.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("*");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 250, 20));
+
+        jLabel17.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("*");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 250, 20));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 500, 10));
+
+        jLabel18.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel18.setText("Enter OTP:");
+        jLabel18.setToolTipText("");
+        jLabel18.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 130, 40));
+
         jButton4.setBackground(new java.awt.Color(0, 153, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(51, 51, 51));
-        jButton4.setText("Create Account");
+        jButton4.setText("Send");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -239,33 +292,41 @@ public class TeacherSignup extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, 170, 40));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 580, 500, 10));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 80, 40));
 
-        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setText("ffffffff");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 250, 20));
+        jButton5.setBackground(new java.awt.Color(0, 153, 153));
+        jButton5.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(51, 51, 51));
+        jButton5.setText("Create Account");
+        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 580, 170, 40));
 
-        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("ffffffff");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 250, 20));
+        jTextField8.setBackground(new java.awt.Color(204, 255, 204));
+        jTextField8.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField8KeyReleased(evt);
+            }
+        });
+        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 250, 30));
 
-        jLabel15.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel15.setText("ffffffff");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 250, 20));
-
-        jLabel16.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel16.setText("ffffffff");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 250, 20));
-
-        jLabel17.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel17.setText("ffffffff");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 250, 20));
+        jLabel21.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("*");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 555, 250, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 650, 650));
 
@@ -296,8 +357,8 @@ public class TeacherSignup extends javax.swing.JFrame {
         });
         getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/welcomeBackground.jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -345,10 +406,6 @@ public class TeacherSignup extends javax.swing.JFrame {
         new TeacherLogin().setVisible(true);
     }//GEN-LAST:event_jButton17ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
         // TODO add your handling code here:
         String PATTERN = "^[a-zA-Z ]{2,20}$";
@@ -356,6 +413,7 @@ public class TeacherSignup extends javax.swing.JFrame {
         Matcher match = namePattern.matcher(jTextField4.getText().trim());
         
         if(!match.matches()){
+            jLabel3.setForeground(new java.awt.Color(255, 0, 0));
             jLabel3.setText("Incorrect Name");
         }else{
              jLabel3.setText("");
@@ -369,6 +427,7 @@ public class TeacherSignup extends javax.swing.JFrame {
         Matcher match = emailPattern.matcher(jTextField5.getText().trim());
         
         if(!match.matches()){
+             jLabel4.setForeground(new java.awt.Color(255, 0, 0));
             jLabel4.setText("Incorrect email id");
         }else{
              jLabel4.setText("");
@@ -382,6 +441,7 @@ public class TeacherSignup extends javax.swing.JFrame {
         Matcher match = mobilePattern.matcher(jTextField3.getText().trim());
         
         if(!match.matches()){
+             jLabel15.setForeground(new java.awt.Color(255, 0, 0));
             jLabel15.setText("Incorrect mobile number");
         }else{
              jLabel15.setText("");
@@ -390,14 +450,132 @@ public class TeacherSignup extends javax.swing.JFrame {
 
     private void jTextField6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyReleased
         // TODO add your handling code here:
-        int length = jTextField6.getText().length();
+        int length = jTextField6.getText().trim().length();
         
          if(length<8){
+              jLabel16.setForeground(new java.awt.Color(255, 0, 0));
             jLabel16.setText("minimum 8 characters required");
         }else{
              jLabel16.setText("");
         }
     }//GEN-LAST:event_jTextField6KeyReleased
+
+    private void jTextField7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField7KeyReleased
+        // TODO add your handling code here:
+        String Password  = jTextField6.getText().trim();
+        String PasswordConf = jTextField7.getText().trim();
+        
+        if(Password.equals(PasswordConf)){
+            jLabel17.setText("");
+        }else{
+             jLabel17.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel17.setText("Password must be same");
+        }
+    }//GEN-LAST:event_jTextField7KeyReleased
+
+    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+        // TODO add your handling code here:
+         String answer = jTextField2.getText().trim();
+        if(answer.length()>0){
+            jLabel14.setText("");
+        }else{
+             jLabel14.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel14.setText("Answer required");
+        }
+    }//GEN-LAST:event_jTextField2KeyReleased
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+         try {
+			// Construct data
+			
+                        
+                        Random rand = new Random();
+                        OTP = rand.nextInt(99999);
+                        String name = jTextField4.getText().trim();
+                   
+			
+                        JOptionPane.showMessageDialog(null, "Hi "+name+". Your OTP "+OTP);
+		} catch (Exception e) {
+//		
+                        JOptionPane.showMessageDialog(null, e);
+		}
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+         
+        String nameErr = jLabel3.getText();
+        String emailErr = jLabel4.getText();
+        String mobileErr = jLabel15.getText();
+        String passErr = jLabel16.getText();
+        String confPassErr = jLabel17.getText();
+        String answerErr = jLabel14.getText();
+        String OTPErr = jLabel21.getText();
+        
+        if( "".equals(nameErr) && "".equals(emailErr) && "".equals(mobileErr) && "".equals(passErr) && "".equals(confPassErr) && "".equals(answerErr) && "Account Varified".equals(OTPErr)){
+           
+            
+            String userName = jTextField4.getText();
+            String email = jTextField5.getText();
+            String mobile = jTextField3.getText();
+            String password = jTextField6.getText();
+            String security = jComboBox1.getSelectedItem().toString();
+            String answer = jTextField2.getText();
+            
+            
+            try {
+                Connection con = Conn.getCon();
+                PreparedStatement ps= con.prepareStatement("insert into teacherInfo values(?,?,?,?,?,?)");
+                 ps.setString(1, userName);
+                ps.setString(2, email);
+                ps.setString(3, mobile);
+                ps.setString(4, password);
+                ps.setString(5, security);
+                ps.setString(6, answer);
+                ps.executeUpdate();
+                
+                JOptionPane.showMessageDialog(null, "signup Successfull.");
+                dispose();
+                new TeacherLogin(jTextField5.getText()).setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            } 
+         
+        }else{
+            if(nameErr != ""){
+                JOptionPane.showMessageDialog(null, "Enter correct name");
+            }else if(emailErr != ""){
+                JOptionPane.showMessageDialog(null, "Enter correct Email Id");
+            }else if(mobileErr != ""){
+                JOptionPane.showMessageDialog(null, "Enter correct mobile number");
+            }else if(passErr != ""){
+                JOptionPane.showMessageDialog(null, "minimum 8 characters required in password");
+            }else if(confPassErr != ""){
+                JOptionPane.showMessageDialog(null, "password must be same");
+            }else if(answerErr != ""){
+                JOptionPane.showMessageDialog(null, "Please fill security answer");
+            }else if(OTPErr != "Account Varified"){
+                JOptionPane.showMessageDialog(null, "Enter correct OTP");
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyReleased
+        // TODO add your handling code here:
+         if(OTP == Integer.parseInt(jTextField8.getText())){
+            jLabel21.setForeground(new java.awt.Color(0, 255, 0));
+            jLabel21.setText("Account Varified");
+        }else{
+            jLabel21.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel21.setText("Incorrect OTP");
+        }
+    }//GEN-LAST:event_jTextField8KeyReleased
 
     /**
      * @param args the command line arguments
@@ -439,6 +617,7 @@ public class TeacherSignup extends javax.swing.JFrame {
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -449,7 +628,9 @@ public class TeacherSignup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -466,5 +647,6 @@ public class TeacherSignup extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }

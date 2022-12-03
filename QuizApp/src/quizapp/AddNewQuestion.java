@@ -12,16 +12,25 @@ import javax.swing.JOptionPane;
  * @author sathe
  */
 public class AddNewQuestion extends javax.swing.JFrame {
+    
+    public String language;
 
     /**
      * Creates new form AddNewQuestion
      */
     public AddNewQuestion() {
         initComponents();
+    }
+    
+    public AddNewQuestion(String language) {
+        initComponents();
+        
+        this.language = language;
+        jLabel12.setText(language);
         try {
             Connection con = Conn.getCon();
 //            Statement st = con.createStatement();
-            PreparedStatement pstat=con.prepareStatement("select count(id) from question", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            PreparedStatement pstat=con.prepareStatement("select count(id) from "+this.language+"", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = pstat.executeQuery();
             
             if(rs.first()){
@@ -68,10 +77,10 @@ public class AddNewQuestion extends javax.swing.JFrame {
         ClearButton = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jButton17 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -79,6 +88,7 @@ public class AddNewQuestion extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jButton18 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -199,13 +209,6 @@ public class AddNewQuestion extends javax.swing.JFrame {
         jTextField6.setPreferredSize(new java.awt.Dimension(700, 40));
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Midnight City.jpg"))); // NOI18N
-        jLabel10.setPreferredSize(new java.awt.Dimension(1066, 500));
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 950, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
         jButton17.setBackground(new java.awt.Color(255, 255, 255,0));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logout.png"))); // NOI18N
         jButton17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -227,6 +230,16 @@ public class AddNewQuestion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1039, 200, 270, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Midnight City.jpg"))); // NOI18N
+        jLabel10.setPreferredSize(new java.awt.Dimension(1066, 500));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 950, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all student result.png"))); // NOI18N
@@ -307,6 +320,9 @@ public class AddNewQuestion extends javax.swing.JFrame {
         });
         getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, -1, -1));
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoBlackbig.png"))); // NOI18N
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/index_back.jpg"))); // NOI18N
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -335,7 +351,7 @@ public class AddNewQuestion extends javax.swing.JFrame {
         try {
             if (!"".equals(id) && !"".equals(ques)  && !"".equals(opt1) && !"".equals(opt2) &&  !"".equals(opt3) && !"".equals(opt4) && !"".equals(answer)) {
                  Connection con = Conn.getCon();
-                PreparedStatement ps= con.prepareStatement("insert into question values(?,?,?,?,?,?,?)", ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE); 
+                PreparedStatement ps= con.prepareStatement("insert into "+this.language+" values(?,?,?,?,?,?,?)", ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE); 
                 ps.setString(1, id);
                 ps.setString(2, ques);
                 ps.setString(3, opt1);
@@ -348,7 +364,7 @@ public class AddNewQuestion extends javax.swing.JFrame {
                 jf.setAlwaysOnTop(true);
                 JOptionPane.showMessageDialog(jf, "Successfully Updated");
                 dispose();
-                new AddNewQuestion().setVisible(true);
+                new AddNewQuestion(language).setVisible(true);
             } else {
                  JFrame jf = new JFrame();
                 jf.setAlwaysOnTop(true);
@@ -396,31 +412,31 @@ public class AddNewQuestion extends javax.swing.JFrame {
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new ChooseTechnology().setVisible(true);
+        new ChooseTechnology("teacher", "").setVisible(true);
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new UpdateQuestion().setVisible(true);
+        new UpdateQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new AllQuestion().setVisible(true);
+        new AllQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new DeleteQuestion().setVisible(true);
+        new DeleteQuestion(language).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
-        new AllStudentResult().setVisible(true);
+        new AllStudentResult(language).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -479,6 +495,7 @@ public class AddNewQuestion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
